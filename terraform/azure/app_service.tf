@@ -9,7 +9,7 @@ resource azurerm_app_service_plan "example" {
   }
   tags = {
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
-    git_file             = "terraform/azure/app_service.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -30,7 +30,7 @@ resource azurerm_app_service "app-service1" {
   }
   tags = {
     git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
-    git_file             = "terraform/azure/app_service.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-19 21:14:50"
     git_last_modified_by = "Adin.Ermie@outlook.com"
     git_modifiers        = "Adin.Ermie/nimrodkor"
@@ -52,7 +52,7 @@ resource azurerm_app_service "app-service2" {
   }
   tags = {
     git_commit           = "5c6b5d60a8aa63a5d37e60f15185d13a967f0542"
-    git_file             = "terraform/azure/app_service.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2021-05-02 10:06:10"
     git_last_modified_by = "nimrodkor@users.noreply.github.com"
     git_modifiers        = "Adin.Ermie/nimrodkor"

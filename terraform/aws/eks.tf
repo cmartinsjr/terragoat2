@@ -20,7 +20,7 @@ resource aws_iam_role "iam_for_eks" {
   assume_role_policy = data.aws_iam_policy_document.iam_policy_eks.json
   tags = {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/eks.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -48,7 +48,7 @@ resource aws_vpc "eks_vpc" {
     Name = "${local.resource_prefix.value}-eks-vpc"
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/eks.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -68,7 +68,7 @@ resource aws_subnet "eks_subnet1" {
     "kubernetes.io/cluster/${local.eks_name.value}" = "shared"
     }, {
     git_commit                                       = "6e62522d2ab8f63740e53752b84a6e99cd65696a"
-    git_file                                         = "terraform/aws/eks.tf"
+    git_file                                         = "terraform/aws/s3.tf"
     git_last_modified_at                             = "2021-05-02 11:16:31"
     git_last_modified_by                             = "nimrodkor@gmail.com"
     git_modifiers                                    = "nimrodkor"
@@ -96,7 +96,7 @@ resource aws_subnet "eks_subnet2" {
     "kubernetes.io/cluster/${local.eks_name.value}" = "shared"
     }, {
     git_commit                                       = "6e62522d2ab8f63740e53752b84a6e99cd65696a"
-    git_file                                         = "terraform/aws/eks.tf"
+    git_file                                         = "terraform/aws/s3.tf"
     git_last_modified_at                             = "2021-05-02 11:16:31"
     git_last_modified_by                             = "nimrodkor@gmail.com"
     git_modifiers                                    = "nimrodkor"
@@ -129,7 +129,7 @@ resource aws_eks_cluster "eks_cluster" {
   ]
   tags = {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/eks.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"

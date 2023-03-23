@@ -5,7 +5,7 @@ resource "azurerm_virtual_network" "example" {
   resource_group_name = azurerm_resource_group.example.name
   tags = {
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
-    git_file             = "terraform/azure/networking.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -34,7 +34,7 @@ resource "azurerm_network_interface" "ni_linux" {
   }
   tags = {
     git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
-    git_file             = "terraform/azure/networking.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 15:48:15"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -56,7 +56,7 @@ resource "azurerm_network_interface" "ni_win" {
   }
   tags = {
     git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
-    git_file             = "terraform/azure/networking.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 15:48:15"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -96,7 +96,7 @@ resource azurerm_network_security_group "bad_sg" {
   }
   tags = {
     git_commit           = "5c6b5d60a8aa63a5d37e60f15185d13a967f0542"
-    git_file             = "terraform/azure/networking.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2021-05-02 10:06:10"
     git_last_modified_by = "nimrodkor@users.noreply.github.com"
     git_modifiers        = "nimrodkor"
@@ -112,7 +112,7 @@ resource azurerm_network_watcher "network_watcher" {
   resource_group_name = azurerm_resource_group.example.name
   tags = {
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
-    git_file             = "terraform/azure/networking.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -134,7 +134,7 @@ resource azurerm_network_watcher_flow_log "flow_log" {
   }
   tags = {
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
-    git_file             = "terraform/azure/networking.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"

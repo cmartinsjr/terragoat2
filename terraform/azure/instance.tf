@@ -31,7 +31,7 @@ resource azurerm_linux_virtual_machine "linux_machine" {
     environment = var.environment
     }, {
     git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
-    git_file             = "terraform/azure/instance.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 15:48:15"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -66,7 +66,7 @@ resource azurerm_windows_virtual_machine "windows_machine" {
     environment = var.environment
     }, {
     git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
-    git_file             = "terraform/azure/instance.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-17 15:48:15"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"

@@ -21,7 +21,7 @@ EOF
     Name = "${local.resource_prefix.value}-ec2"
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -40,7 +40,7 @@ resource "aws_ebs_volume" "web_host_storage" {
     Name = "${local.resource_prefix.value}-ebs"
     }, {
     git_commit           = "d3439f0f2af62f6fa3521e14d6c27819ef8f12e1"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2021-05-02 11:17:26"
     git_last_modified_by = "nimrodkor@users.noreply.github.com"
     git_modifiers        = "nimrodkor"
@@ -58,7 +58,7 @@ resource "aws_ebs_snapshot" "example_snapshot" {
     Name = "${local.resource_prefix.value}-ebs-snapshot"
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -104,7 +104,7 @@ resource "aws_security_group" "web-node" {
   depends_on = [aws_vpc.web_vpc]
   tags = {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -122,7 +122,7 @@ resource "aws_vpc" "web_vpc" {
     Name = "${local.resource_prefix.value}-vpc"
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -142,7 +142,7 @@ resource "aws_subnet" "web_subnet" {
     Name = "${local.resource_prefix.value}-subnet"
     }, {
     git_commit           = "6e62522d2ab8f63740e53752b84a6e99cd65696a"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2021-05-02 11:16:31"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -162,7 +162,7 @@ resource "aws_subnet" "web_subnet2" {
     Name = "${local.resource_prefix.value}-subnet2"
     }, {
     git_commit           = "6e62522d2ab8f63740e53752b84a6e99cd65696a"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2021-05-02 11:16:31"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -180,7 +180,7 @@ resource "aws_internet_gateway" "web_igw" {
     Name = "${local.resource_prefix.value}-igw"
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -197,7 +197,7 @@ resource "aws_route_table" "web_rtb" {
     Name = "${local.resource_prefix.value}-rtb"
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -236,7 +236,7 @@ resource "aws_network_interface" "web-eni" {
     Name = "${local.resource_prefix.value}-primary_network_interface"
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -258,7 +258,7 @@ resource "aws_flow_log" "vpcflowlogs" {
     Environment = local.resource_prefix.value
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
@@ -277,7 +277,7 @@ resource "aws_s3_bucket" "flowbucket" {
     Environment = local.resource_prefix.value
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
+    git_file             = "terraform/aws/s3.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
