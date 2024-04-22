@@ -8,6 +8,7 @@ resource "aws_instance" "web_host" {
   subnet_id = "${aws_subnet.web_subnet.id}"
   user_data = <<EOF
 #! /bin/bash
+#adding comment for commit
 sudo apt-get update
 sudo apt-get install -y apache2
 sudo systemctl start apache2
