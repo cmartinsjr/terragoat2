@@ -78,6 +78,44 @@ module "test-bucket" {
   use_cmek = false
 }
 
+module "test-bucket2" {
+  source  = "/NorthwellHealth-TFCB/bucket/gcp"
+  version = "0.23.0"
+
+  project_id = var.project_id
+  labels     = var.labels
+  location   = var.region
+
+  resource_function = "test-bucket"
+
+  use_cmek = false
+}
+
+module "test-bucket3" {
+  source  = "git::https://github.com/terraform-aws-modules/terraform-aws-vpc.git?ref=26c38a66f12e7c6c93b6a2ba127ad68981a48671"
+  version = "0.23.0"
+
+  project_id = var.project_id
+  labels     = var.labels
+  location   = var.region
+
+  resource_function = "test-bucket"
+
+  use_cmek = false
+}
+
+module "test-bucket4" {
+  source  = "https://github.com/username/repository?ref=feature-branch"
+  version = "0.23.0"
+
+  project_id = var.project_id
+  labels     = var.labels
+  location   = var.region
+
+  resource_function = "test-bucket"
+
+  use_cmek = false
+}
 
 # give members par_GCPAdmin_CDIG_Engineering 
 resource "google_project_iam_member" "group_cluster_k8_role" {
