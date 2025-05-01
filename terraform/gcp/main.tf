@@ -59,7 +59,7 @@ locals {
     "roles/recaptchaenterprise.admin",
     "roles/alloydb.admin",
     "roles/serviceusage.apiKeysAdmin"
-  ] 
+  ]
 }
 
 ##
@@ -70,8 +70,18 @@ module "test-bucket" {
   version = "0.23.0"
 
   project_id = var.project_id
-  labels     = var.labels
-  location   = var.region
+  labels = merge(var.labels, {
+    git_commit           = "7e8dd4170c4eec6c48d0b5b3f16245b6815fa661"
+    git_file             = "terraform__gcp__main_tf"
+    git_last_modified_at = "2025-02-04-15-44-49"
+    git_last_modified_by = "103141817cmartinsjr"
+    git_modifiers        = "103141817cmartinsjr"
+    git_org              = "cmartinsjr"
+    git_repo             = "terragoat2"
+    yor_name             = "test-bucket"
+    yor_trace            = "295691e4-5fff-49d9-8f49-c8f86b5191ce"
+  })
+  location = var.region
 
   resource_function = "test-bucket"
 
@@ -83,8 +93,18 @@ module "test-bucket2" {
   version = "0.23.0"
 
   project_id = var.project_id
-  labels     = var.labels
-  location   = var.region
+  labels = merge(var.labels, {
+    git_commit           = "0302f6d3e4b4bed516dd4ff9ef270a484828fe15"
+    git_file             = "terraform__gcp__main_tf"
+    git_last_modified_at = "2025-02-10-19-01-55"
+    git_last_modified_by = "103141817cmartinsjr"
+    git_modifiers        = "103141817cmartinsjr"
+    git_org              = "cmartinsjr"
+    git_repo             = "terragoat2"
+    yor_name             = "test-bucket2"
+    yor_trace            = "fe2d3e75-27a8-4dc3-b834-dd8a60cc0ca1"
+  })
+  location = var.region
 
   resource_function = "test-bucket"
 
@@ -96,8 +116,18 @@ module "test-bucket3" {
   version = "0.23.0"
 
   project_id = var.project_id
-  labels     = var.labels
-  location   = var.region
+  labels = merge(var.labels, {
+    git_commit           = "0302f6d3e4b4bed516dd4ff9ef270a484828fe15"
+    git_file             = "terraform__gcp__main_tf"
+    git_last_modified_at = "2025-02-10-19-01-55"
+    git_last_modified_by = "103141817cmartinsjr"
+    git_modifiers        = "103141817cmartinsjr"
+    git_org              = "cmartinsjr"
+    git_repo             = "terragoat2"
+    yor_name             = "test-bucket3"
+    yor_trace            = "d265c72e-22c3-4082-a658-5844b2f4dc05"
+  })
+  location = var.region
 
   resource_function = "test-bucket"
 
@@ -109,8 +139,18 @@ module "test-bucket4" {
   version = "0.23.0"
 
   project_id = var.project_id
-  labels     = var.labels
-  location   = var.region
+  labels = merge(var.labels, {
+    git_commit           = "0302f6d3e4b4bed516dd4ff9ef270a484828fe15"
+    git_file             = "terraform__gcp__main_tf"
+    git_last_modified_at = "2025-02-10-19-01-55"
+    git_last_modified_by = "103141817cmartinsjr"
+    git_modifiers        = "103141817cmartinsjr"
+    git_org              = "cmartinsjr"
+    git_repo             = "terragoat2"
+    yor_name             = "test-bucket4"
+    yor_trace            = "04c1b259-8617-44c2-975b-57885e2d6feb"
+  })
+  location = var.region
 
   resource_function = "test-bucket"
 
@@ -182,6 +222,17 @@ resource "google_pubsub_topic" "test-topic" {
   name = "test-topic"
 
   depends_on = [google_project_iam_member.runner-sa-roles]
+  labels = {
+    git_commit           = "7e8dd4170c4eec6c48d0b5b3f16245b6815fa661"
+    git_file             = "terraform__gcp__main_tf"
+    git_last_modified_at = "2025-02-04-15-44-49"
+    git_last_modified_by = "103141817cmartinsjr"
+    git_modifiers        = "103141817cmartinsjr"
+    git_org              = "cmartinsjr"
+    git_repo             = "terragoat2"
+    yor_name             = "test-topic"
+    yor_trace            = "25331418-2cbf-428e-a139-1b1e6b01cc61"
+  }
 }
 
 resource "google_service_account" "default" {
