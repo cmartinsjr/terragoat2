@@ -1,3 +1,4 @@
+---
 name: Prisma Cloud SAST Scan and Upload
 
 on:
