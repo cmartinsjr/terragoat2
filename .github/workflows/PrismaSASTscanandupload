@@ -1,0 +1,53 @@
+name: Prisma Cloud SAST Scan and Upload
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install SAST Tool
+        run: |
+          pip install semgrep
+          sudo apt-get update && sudo apt-get install jq -y
+      - name: Run Scan
+        run: |
+          semgrep --config auto --sarif -o output.sarif
+      - name: Upload to Prisma Cloud
+        env:
+          PRISMA_URL: ${{ vars.PRISMA_URL }}
+          PRISMA_USERNAME: ${{ secrets.PRISMA_USERNAME }}
+          PRISMA_PASSWORD: ${{ secrets.PRISMA_PASSWORD }}
+          PRISMA_REPO_ID: ${{ vars.PRISMA_REPO_ID }}
+        run: |
+          # Authenticate with Prisma Cloud
+          AUTH_RESPONSE=$(curl -L "$PRISMA_URL/login" \
+                             -H 'Content-Type: application/json; charset=UTF-8' \
+                             -H 'Accept: application/json; charset=UTF-8' \
+                             -d '{
+                                   "password": "'"${PRISMA_PASSWORD}"'",
+                                   "username": "'"${PRISMA_USERNAME}"'"
+                                 }')
+          echo "AUTH_RESPONSE: $AUTH_RESPONSE"
+          TOKEN=$(echo $AUTH_RESPONSE | jq -r '.token')
+          MESSAGE=$(echo $AUTH_RESPONSE | jq -r '.message')
+          echo "Token: $TOKEN"
+          echo "Message: $MESSAGE"
+          if [ -z "$TOKEN" ]; then
+            echo "Error: Failed to retrieve token"
+            exit 1
+          fi
+          # Upload SARIF file to Prisma Cloud
+          UPLOAD_RESPONSE=$(curl -v -X POST "$PRISMA_URL/code/api/v2/uploads/uploadSarifFile" \
+                          -H "Authorization: $TOKEN" \
+                          -F "file=@./output.sarif;type=application/octet-stream" \
+                          -F "repositoryId=$PRISMA_REPO_ID" \
+                          -F "fileName=output.sarif")
+          echo "Upload response: $UPLOAD_RESPONSE"
