@@ -1,5 +1,5 @@
 ---
-name: Prisma Cloud Scan and Upload
+name: Prisma Cloud Semgrep SAST Scan and Upload
 
 on:
   pull_request: {}
