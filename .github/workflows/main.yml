@@ -2,6 +2,7 @@
 name: Prisma Cloud Checkov Scan and Upload
 
 on:
+  pull_request: {}
   push:
     branches:
       - main
